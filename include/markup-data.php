@@ -253,7 +253,7 @@ if ( ! class_exists( 'Art_Markup_Post' ) ) {
 		/**
 		 * @param array $default
 		 */
-		public function set_default( array $default ): void {
+		public function set_default( array $default ){
 			$this->default = $default;
 		}
 		
@@ -269,7 +269,7 @@ if ( ! class_exists( 'Art_Markup_Post' ) ) {
 		/**
 		 * @param mixed $authordata
 		 */
-		public function set_author_data( $author_data ): void {
+		public function set_author_data( $author_data ){
 			$this->author_data = $author_data;
 		}
 		
