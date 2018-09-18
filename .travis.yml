@@ -11,3 +11,23 @@ php:
 script:
 # Run your tests here.
 - echo 'Tested'
+
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "Artem Abramovich"
+  - git config --local user.email "YOUR GIT USER EMAIL"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+
+deploy:
+  provider: releases
+  api_key: "eee6f19f0fe07aad8790a72d550aee82631fcf6f"
+  # file: "FILE TO UPLOAD"
+  skip_cleanup: true
+branches:
+  only:
+  - master
+
+ignore:
+  - *.md
+  - *.yml
+  - /art-schema-markup/.idea/*
