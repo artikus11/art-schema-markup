@@ -7,11 +7,6 @@ php:
 - '7.2'
 script:
 - echo 'Tested'
-before_deploy:
-      # Set up git user name and tag this commit
-      - git config --local user.name "artikus11"
-      - git config --local user.email "artikus.sol@gmail.ru"
-      - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
