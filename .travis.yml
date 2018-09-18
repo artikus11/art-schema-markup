@@ -21,7 +21,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: "fc60f27586721bede752017152dcf5aa8e33cc69"
+    secure: "b27945544c0122ba5e8d6ace0e0beda30ed90397"
   file: "latest.zip"
   skip_cleanup: true
   on:
