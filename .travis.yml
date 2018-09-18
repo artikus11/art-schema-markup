@@ -22,9 +22,11 @@ deploy:
   provider: releases
   api_key:
     secure: "db64ffef9ecf2b8b0d0d0e011ffd256eae05844b"
-  file: "test"
+  file: "latest"
   skip_cleanup: true
   on:
       tags: true
+
+after_deploy: "release created"
 
 
