@@ -12,25 +12,10 @@ script:
 # Run your tests here.
 - echo 'Tested'
 
-branches:
-  only:
-  - master
-
-ignore:
-  - *.md
-  - *.yml
-  - /art-schema-markup/.idea/*
-
-before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "Artem Abramovich"
-  - git config --local user.email "YOUR GIT USER EMAIL"
-  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-
 deploy:
   provider: releases
   api_key:
-    secure: db64ffef9ecf2b8b0d0d0e011ffd256eae05844b
+    secure: "db64ffef9ecf2b8b0d0d0e011ffd256eae05844b"
   file: "test"
   skip_cleanup:
   on:
