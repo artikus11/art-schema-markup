@@ -12,6 +12,15 @@ script:
 # Run your tests here.
 - echo 'Tested'
 
+branches:
+  only:
+  - master
+
+ignore:
+  - *.md
+  - *.yml
+  - /art-schema-markup/.idea/*
+
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "Artem Abramovich"
@@ -22,14 +31,9 @@ deploy:
   provider: releases
   api_key:
     secure: db64ffef9ecf2b8b0d0d0e011ffd256eae05844b
-  file: "FILE TO UPLOAD"
-  skip_cleanup: true
+  file: "test"
+  skip_cleanup:
+  on:
+      tags: true
 
-branches:
-  only:
-  - master
 
-ignore:
-  - *.md
-  - *.yml
-  - /art-schema-markup/.idea/*
