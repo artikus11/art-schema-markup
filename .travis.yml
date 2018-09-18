@@ -12,17 +12,12 @@ script:
 # Run your tests here.
 - echo 'Tested'
 
-ignore:
-  - *.md
-  - *.yml
-  - /art-schema-markup/.idea/*
-
 deploy:
   provider: releases
   api_key:
     secure: "db64ffef9ecf2b8b0d0d0e011ffd256eae05844b"
   file: "test"
-  skip_cleanup:
+  skip_cleanup: true
   on:
       tags: true
 
