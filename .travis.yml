@@ -20,8 +20,9 @@ before_deploy:
 
 deploy:
   provider: releases
-  api_key: "db64ffef9ecf2b8b0d0d0e011ffd256eae05844b"
-  # file: "FILE TO UPLOAD"
+  api_key:
+    secure: db64ffef9ecf2b8b0d0d0e011ffd256eae05844b
+  file: "FILE TO UPLOAD"
   skip_cleanup: true
 branches:
   only:
