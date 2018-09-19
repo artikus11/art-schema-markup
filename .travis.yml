@@ -7,11 +7,16 @@ php:
 - '7.2'
 script:
 - echo 'Tested'
+before_deploy:
+      - git config --local user.name "artikus11"
+      - git config --local user.email "artikus.sol@gmail.ru"
+      - git tag "latest-2.0.1"
 deploy:
   provider: releases
   api_key:
     secure: ACW1gRS66cK5GO5SNK8Z5N4VXd52xoXdkWttgAK1uh64QjIYJ1w0uAGPUgJ1S2B9J0jQieaOcLdaACzNNgj94S6ZthVdVEy1P0WYuxXnAaOGvBoxKZN8jlz/gi4G1sOOT4vMbtOLkWkrz0vYyFOcAbPGy5+muAnyfh1JsImYj53xxkdXwT9qVtdpx/KZJK7UIQaD6Nk/4UWCJYmrEigekRYD5Ap0wLUGzeDVC4fFUtndMwshwtKJaE/jO7OSYCAPtuAkbzNnH62wLoWhupMe/DJoqKWfRLgqmiPs4/eD5kbtEEiuH52Y3x+KSsdbpzV0eRfQ4rqfZ4Foc17tsaXXVDZp/0S5v6r/I3QbTI48kCBfj6DyElTLGes5ZF4SHjuTUGqmpRboovSSFkcR4I0q6i2+dbTKyN4i874ElJ2cpmaN+jgJ4GdGblTtSL6SABT5a+dNZG1gxv4u6jieOxtDLZSMnFxBAdih/Oatq5hFPXEYy6meGBKVlvwBR9YR3tdnmhDzUv2tfCGxhLp7AcKCBcX/+b2X6wtSLrS3hIcCWd6A8gtWwNdToEU4+3/l6xHp0gTaeU/Y8kxcJDWp2bSpRDP6iDlRWOrolZSKh6pou8wl3FeKOaTwruxsi8EvnWsxHYS87pYuec7eTeGYBl1Z2NMwY+XlxGOyxtyM6VQkSLU=
   file: latest.zip
   on:
+    php: 7.0
     repo: artikus11/art-schema-markup
 after_deploy: "release created"

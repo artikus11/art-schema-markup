@@ -4,20 +4,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'asm_markup_post' ) ) {
-	add_filter( 'the_content', 'asm_markup_post', 10 );
+	
 	/**
-	 * Вывод разметки внутри статьи
-	 *
-	 * @param $content
-	 *
-	 * @return string
+	 * Вывод разметки в head
 	 */
-	function asm_markup_post( $content ) {
-		$markup = new Art_Markup_Post();
-		
-		return $markup->markup_schemaorg() . $content;
+	function asm_markup_post() {
+		echo asm_markup();
 	}
 }
+add_action( 'wp_head', 'asm_markup_post', 30 );
 
 if ( ! class_exists( 'Art_Markup_Post' ) ) {
 	class Art_Markup_Post {
@@ -125,11 +120,11 @@ if ( ! class_exists( 'Art_Markup_Post' ) ) {
 				ob_end_clean();
 				$output_image = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $this->get_post_obj()->post_content, $matches );
 				$image_arr    = [ $matches [1][0], '1280', '720' ];
-			} elseif ( isset( $this->get_default()['image_default']  ) && ! empty( $this->get_default()['image_default']  )) {
+			} elseif ( isset( $this->get_default()['image_default'] ) && ! empty( $this->get_default()['image_default'] ) ) {
 				
-				$image_arr = [ $this->get_default()['image_default'] , '1280', '720' ];
+				$image_arr = [ $this->get_default()['image_default'], '1280', '720' ];
 			} else {
-				$image_arr = ['', '1280', '720' ];
+				$image_arr = [ '', '1280', '720' ];
 			}
 			
 			return $image_arr;
@@ -244,16 +239,17 @@ if ( ! class_exists( 'Art_Markup_Post' ) ) {
 		 */
 		public function get_default() {
 			$this->default = [
-				'image_default' => get_option('asm_option_name')['image_default'],
-				'logo'          => get_option('asm_option_name')['image_logo'],
+				'image_default' => get_option( 'asm_option_name' )['image_default'],
+				'logo'          => get_option( 'asm_option_name' )['image_logo'],
 			];
+			
 			return $this->default;
 		}
 		
 		/**
 		 * @param array $default
 		 */
-		public function set_default( array $default ){
+		public function set_default( array $default ) {
 			$this->default = $default;
 		}
 		
@@ -269,9 +265,24 @@ if ( ! class_exists( 'Art_Markup_Post' ) ) {
 		/**
 		 * @param mixed $authordata
 		 */
-		public function set_author_data( $author_data ){
+		public function set_author_data( $author_data ) {
 			$this->author_data = $author_data;
 		}
 		
+	}
+}
+
+if ( ! function_exists( 'asm_markup' ) ) {
+	/**
+	 * Обертка класса
+	 *
+	 * @param $content
+	 *
+	 * @return string
+	 */
+	function asm_markup() {
+		$markup = new Art_Markup_Post();
+		
+		return $markup->markup_schemaorg();
 	}
 }
