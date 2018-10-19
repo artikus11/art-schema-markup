@@ -8,6 +8,7 @@ jQuery(document).ready(function () {
         _custom_media = true;
         wp.media.editor.send.attachment = function (props, attachment) {
             if (_custom_media) {
+                jQuery(button).prev().attr('src', attachment.url);
                 jQuery(button).val(attachment.url);
             } else {
                 return _orig_send_attachment.apply(this, [props, attachment]);
@@ -19,6 +20,7 @@ jQuery(document).ready(function () {
 
     jQuery('.asm-upload .remove_image_button').on('click', function () {
         _custom_media = false;
+        jQuery(this).prev().prev().prev().attr('src', '');
         jQuery(this).prev().prev().val('');
     });
 });
