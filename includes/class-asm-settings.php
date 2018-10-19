@@ -265,10 +265,11 @@ class ASM_Admin_Settings {
 		
 		echo '
         <div class="asm-upload">
-	        <img src="' . $image_link . '" width="250px" height="auto" style="display:block;"/>
-            <input type="text" name="asm_option_name[' . $name . ']" id="asm_option_name[' . $name . ']" value="' . $image_link . '" style="width: 250px;"/>
-            <button class="upload_image_button button" id="asm_option_name[' . $name . ']">' . __( 'Upload', 'art-schema-markup' ) . '</button>
-            <input type="text" class="remove_image_button button" style="display: inline-block;max-width: 33px;" value="&times;">
+	        <img src="' . $image_link . '" width="250px" height="auto" style="display:block;margin-bottom:5px"/>
+            <input type="text" name="asm_option_name[' . $name . ']" id="asm_option_name[' . $name . ']" value="' . $image_link . '" style="width: 172px;"/>
+            <button class="upload_image_button button" id="asm_option_name[' . $name . ']" style="padding: 2px 6px;
+"><span class="dashicons dashicons-upload"></span></button>
+            <span type="text" class="remove_image_button button" style="padding: 3px 6px"><span class="dashicons dashicons-no-alt"></span></span>
         </div>
     ';
 		
