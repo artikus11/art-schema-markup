@@ -4,7 +4,7 @@ Donate link:
 Tags: woocommerce, mode catalog
 Requires at least: 4.8
 Tested up to: 4.9.4
-Stable tag: 4.3
+Stable tag: 2.1.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,6 +35,15 @@ PHP 5.6
 
 
 == Changelog ==
+
+= 2.1.0 =
+* Переписан полностью код
+* Добавлены настройки выбора изображений через библиотеку мультимедиа
+* Добавлены изображения по умолчанию
+* Добавлены настройки выбора места вывода разметки
+* Добавлена проверка на версию php
+* Добалены переводы
+* Исправлены ошибки и нотисы
 
 = 2.0.1 =
 * Добавлена функия обертка
