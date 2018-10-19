@@ -206,7 +206,7 @@ class ASM_Schema_Markup {
 	 *
 	 * @since 1.0.0
 	 */
-	function uninstall() {
+	public static function uninstall() {
 		
 		delete_option( 'asm_option_name' );
 	}
