@@ -5,7 +5,7 @@
  * Text Domain: art-schema-markup
  * Domain Path: /languages
  * Description: Плагин быстрого внедрения микроразметки по schema.org через json-ld для блогов и инфосайтов. Автоматически размечаются посты и страницы
- * Version:           2.1.1
+ * Version:           2.1.2
  * Author:            Artem Abramovich
  * Author URI:        https://wpruse.ru/
  * License:           GPL-2.0+
