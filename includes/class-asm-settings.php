@@ -265,10 +265,10 @@ class ASM_Admin_Settings {
 		
 		echo '
         <div class="asm-upload">
-	        <div><img src="' . $image_link . '" width="250px" height="auto" style=""/></div>
+	        <img src="' . $image_link . '" width="250px" height="auto" style="display:block;"/>
             <input type="text" name="asm_option_name[' . $name . ']" id="asm_option_name[' . $name . ']" value="' . $image_link . '" style="width: 250px;"/>
             <button class="upload_image_button button" id="asm_option_name[' . $name . ']">' . __( 'Upload', 'art-schema-markup' ) . '</button>
-            <button class="remove_image_button button">&times;</button>
+            <input type="text" class="remove_image_button button" style="display: inline-block;max-width: 33px;" value="&times;">
         </div>
     ';
 		
