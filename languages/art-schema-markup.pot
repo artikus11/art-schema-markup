@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Art Schema Markup\n"
+"POT-Creation-Date: 2018-10-19 17:19+0400\n"
+"PO-Revision-Date: 2018-10-19 17:20+0400\n"
+"Last-Translator: Абрамович Артем | artabr.ru <artikus.sol@gmail.com>\n"
+"Language-Team: ArtWoo\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_n:1,2;_e;esc_attr__;esc_attr_e;esc_html__;"
+"esc_html_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: ../art-schema-markup.php:178 ../includes/class-asm-settings.php:46
+msgid "Settings"
+msgstr "Настройки"
+
+#: ../art-schema-markup.php:198
+#, php-format
+msgid ""
+"%s requires PHP 5.6 or higher and your current PHP version is %s. Please "
+"(contact your host to) update your PHP version."
+msgstr ""
+"%s требует PHP 5.6 или выше и ваша текущая версия PHP %s. Пожалуйста "
+"обновите версию PHP."
+
+#: ../includes/class-asm-settings.php:84
+msgid "Default image"
+msgstr "Изображение по умолчанию"
+
+#: ../includes/class-asm-settings.php:86
+msgid "Default logo"
+msgstr "Логотип по умолчанию"
+
+#: ../includes/class-asm-settings.php:88
+msgid "Markup output"
+msgstr "Место вывода"
+
+#: ../includes/class-asm-settings.php:128
+msgid "In header"
+msgstr "В шапке"
+
+#: ../includes/class-asm-settings.php:133
+msgid "Before content"
+msgstr "Перед контентом"
+
+#: ../includes/class-asm-settings.php:138
+msgid "After content"
+msgstr "После контента"
+
+#: ../includes/class-asm-settings.php:143
+msgid "In footer"
+msgstr "В подвале"
+
+#: ../includes/class-asm-settings.php:270
+msgid "Upload"
+msgstr "Загрузить"
